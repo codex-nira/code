@@ -1,0 +1,12 @@
+BW1 = imread('./images/circle.png');
+%BW1(4:6, 4:7) = 1;
+
+
+SE = strel('dis',16);
+
+BW2 = imopen(BW1, SE);
+BW3 = imclose(BW1, SE);
+
+subplot(2,2,1);imshow(BW1);title('origina')hold on;
+subplot(2,2,2);imshow(BW2);
+subplot(2,2,3);imshow(BW3);
